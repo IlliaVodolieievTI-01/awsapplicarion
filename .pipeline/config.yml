@@ -2,30 +2,26 @@
 general:
   buildTool: "mta"
 service:
-  buildToolVersion: "MBTJ11N16"
+  buildToolVersion: "MBTJ17N18"
 stages:
   Build:
     source: helloworldui5
     npmExecuteLint: false
   Additional Unit Tests:
     npmExecuteScripts: false
-  Malware Scan:
-    malwareExecuteScan: true
   Acceptance:
     cloudFoundryDeploy: false
     npmExecuteEndToEndTests: false
+  Malware Scan:
+    malwareExecuteScan: false
+  Release:
+    tmsExport: false
+    tmsUpload: false
+    cloudFoundryDeploy: false
+  Additional Unit Tests:
+    npmExecuteScripts: false
   Compliance:
     sonarExecuteScan: false
-  Release:
-    cloudFoundryDeploy: true
-    cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
-    cfOrg: "mysubdomain"
-    cfSpace: "dev"
-    cfCredentialsId: "deployonbtpcredentials"
-    deployType: "standard"
-    tmsUpload: false
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
-  cloudFoundryDeploy:
-    mtaDeployParameters: "-f --version-rule ALL"
