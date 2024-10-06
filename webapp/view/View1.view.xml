@@ -1,0 +1,18 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.btp.helloworldui5.controller.View1" displayBlock="true">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <FlexBox direction="Column" alignItems="Start" class="sapUiTinyMarginBottom" id="Flexbox0">
+                <Text text="Enter your name:" class="sapUiTinyMarginEnd" id="Text0"/>
+                <Input id="inputName" placeholder="Your Name"/>
+                
+                <Text text="Enter your email:" class="sapUiTinyMarginEnd" id="Text1"/>
+                <Input id="inputEmail" placeholder="Your Email"/>
+                
+                <Button text="Submit" id="Button0" press=".onPress"/>
+                
+                <Text text="{/userName}" class="sapUiTinyMarginTop" id="displayName"/>
+                <Text text="{/userEmail}" class="sapUiTinyMarginTop" id="displayEmail"/>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>
